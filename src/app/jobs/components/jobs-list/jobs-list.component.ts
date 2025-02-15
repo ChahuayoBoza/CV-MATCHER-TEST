@@ -1,10 +1,14 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { JobSummaryComponent } from "../job-summary/job-summary.component";
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { JobCardComponent } from "../job-card/job-card.component";
+import { JobInterface } from '../../models/job.model';
 
 @Component({
   selector: 'jobs-list',
-  imports: [JobSummaryComponent],
+  imports: [JobCardComponent],
   templateUrl: './jobs-list.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class JobsListComponent { }
+export class JobsListComponent {
+
+  public jobs = input.required<JobInterface[]>();
+}

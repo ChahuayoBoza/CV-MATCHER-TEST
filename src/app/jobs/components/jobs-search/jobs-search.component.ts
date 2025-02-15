@@ -13,6 +13,7 @@ export class JobsSearchComponent {
   @Output() search = new EventEmitter<{ title: string, location: string }>();
 
   onSearch() {
-    this.search.emit({ title: this.searchTitle, location: this.searchLocation });
+    // this.search.emit({ title: this.searchTitle, location: this.searchLocation });
+
   }
 }

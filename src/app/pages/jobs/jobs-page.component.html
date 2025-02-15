@@ -1,5 +1,10 @@
 
-<jobs-search (search)="onSearch($event)"/>
+<jobs-search/>
 <br>
-<jobs-list />
-<job-summary/>
+<div class="flex flex-col md:flex-row">
+    <jobs-list  [jobs]="jobs()" class="w-full md:w-2/5"/>
+    <job-detail  class="w-full md:w-3/5"/>
+</div>
+<br>
+<name-page/>
+

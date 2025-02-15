@@ -1,0 +1,30 @@
+<div class=" h-full overflow-y-scroll  p-2">
+  <div class="space-y-2">
+       <div class="p-4 bg-white rounded shadow">
+        <div class="p-2 space-y-4">
+            <div class="flex items-center space-x-4">
+                <div class="w-1/6">
+                    <img [src]="job().company_image" alt="Company Logo" class="w-full h-auto rounded">
+                </div>
+                <div class="w-4/6">
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between">
+                          <i class="fas fa-ellipsis-v text-gray-600 text-2xl ml-2"></i>
+                          <p class="text-xl font-bold">{{job().title}}</p>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <p class="text-gray-600">{{job().company}}</p>
+                        </div>
+                        <p class="flex items-center gap-2"><span>&#128205;</span> {{job().location}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center justify-between">
+                <p class="text-gray-400 text-sm mt-3">Publicado el {{job().posted_date}}</p>
+                <img src="path/to/49percent.png" alt="49%" class="w-10 h-10">
+            </div>
+        </div>
+       </div>
+  </div>
+</div>
+

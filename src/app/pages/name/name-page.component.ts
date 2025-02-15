@@ -3,6 +3,7 @@ import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   imports: [],
+  selector: 'name-page',
   templateUrl: './name-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
