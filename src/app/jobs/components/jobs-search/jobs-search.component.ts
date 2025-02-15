@@ -1,4 +1,6 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Output, signal } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+
 
 @Component({
   selector: 'jobs-search',
@@ -14,6 +16,6 @@ export class JobsSearchComponent {
 
   onSearch() {
     // this.search.emit({ title: this.searchTitle, location: this.searchLocation });
-
+    
   }
 }

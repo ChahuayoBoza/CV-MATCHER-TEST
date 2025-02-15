@@ -1,6 +1,5 @@
-<div>
+<div class="h-[80vh] overflow-y-scroll p-2 space-y-4">
   @for (job of jobs(); track job.job_id) {
-    <job-card [job]="job"/>
+    <job-card class="cursor-pointer p-2 rounded shadow" [job]="job" (click)="verClick()"/>
   }
-
 </div>
