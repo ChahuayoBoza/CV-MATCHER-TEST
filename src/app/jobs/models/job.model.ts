@@ -14,8 +14,8 @@ export interface JobInterface {
   work_modality_id: number;
   country_id: number;
   location: string;
-  salary_min: number | null; // Permitir null si es necesario
-  salary_max: number | null; // Permitir null si es necesario
+  salary_min: number | null; 
+  salary_max: number | null; 
   currency_type: string;
   years_experience: number;
   job_seniority_id: number;

@@ -1,6 +1,16 @@
-import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core';
-import { JobCardComponent } from "../job-card/job-card.component";
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Output,
+  EventEmitter,
+  signal,
+  input,
+  inject,
+  effect,
+} from '@angular/core';
+import { JobCardComponent } from '../job-card/job-card.component';
 import { JobInterface } from '../../models/job.model';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -8,12 +18,30 @@ import { JobInterface } from '../../models/job.model';
   imports: [JobCardComponent],
   templateUrl: './jobs-list.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  
 })
 export class JobsListComponent {
-
   public jobs = input.required<JobInterface[]>();
-  // Inyectamos la señal de trabajo seleccionado
-  verClick() {
-    console.log('Ver click');
+  @Output() jobSelected = new EventEmitter<JobInterface>();
+  private router = inject(Router);
+
+
+
+  public selectedJob = signal<JobInterface | null>(null);
+  
+  constructor() {
+    effect(() => {
+      const selectedJob = this.selectedJob();
+      if (selectedJob) {
+        this.router.navigate([], {
+          queryParams: { title: selectedJob.title },
+          queryParamsHandling: 'merge',
+        });
+      }
+    });
+  }
+
+  public onJobClick(job: JobInterface): void {
+    this.jobSelected.emit(job); 
   }
 }
